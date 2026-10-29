@@ -136,8 +136,8 @@ def get_bbp2_values():
 
     return weight_list, bins
 
-# runs all trials
-def main():
+# runs all of the trials as described in the CA specification
+def run_spec_trial():
     # (x, y, z) = 'bpp', 'p' and 'e'
     run_trial(1, 50, 0.05)
     run_trial(1, 50, 0.30)
@@ -150,10 +150,27 @@ def main():
     run_trial(2, 10, 0.05)
     run_trial(2, 10, 0.30)
 
-    # # extra trial using the example given in the coursework
-    # weight_list = [17, 12, 19, 6, 4, 28]
-    # path = [0, 0, 1, 1, 1, 2]
-    # bins = 3
-    # print(get_fitness(path, weight_list, bins))
+# extra trial using the example given in the coursework
+def run_example_trial():
+    weight_list = [17, 12, 19, 6, 4, 28]
+    path = [0, 0, 1, 1, 1, 2]
+    bins = 3
+    print(get_fitness(path, weight_list, bins)) # should return '1' like in the 
+
+def run_further_trials():
+    # more trials for the 'further work' section
+    run_trial(1, 5, 0.05)
+    run_trial(1, 5, 0.3)
+    run_trial(1, 10, 0.5)
+    run_trial(1, 10, 0.7)
+
+    run_trial(2, 5, 0.05)
+    run_trial(2, 5, 0.3)
+    run_trial(2, 10, 0.5)
+    run_trial(2, 10, 0.7)
+
+# runs all trials
+def main():
+    run_further_trials()
 
 main()
