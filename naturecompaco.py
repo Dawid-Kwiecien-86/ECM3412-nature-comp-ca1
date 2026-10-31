@@ -106,7 +106,7 @@ def get_fitness(path, weight_list, bins):
 def update_phero(phero, path, fitness):
     for x in range(len(path)):
         curr_bin = path[x]
-        phero[x][curr_bin] += (100 / (fitness+1)) # higher fitness = more phero added to edge
+        phero[x][curr_bin] += (100 / (fitness+1)) # lower fitness = more phero added to edge
 
 # all edges have some pheromone evaporated based on 'e'
 def evap_phero(phero, evap_rate):
@@ -171,6 +171,7 @@ def run_further_trials():
 
 # runs all trials
 def main():
+    run_spec_trial()
     run_further_trials()
 
 main()
